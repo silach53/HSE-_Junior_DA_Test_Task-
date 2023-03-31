@@ -51,7 +51,6 @@
 
 ```
 pip install pandas matplotlib
-
 ```
 
 2. Запустите скрипт **`solution1.py`** для обработки входных данных
