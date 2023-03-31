@@ -40,3 +40,20 @@ if(number_of_keyword-output_data['keyword'].nunique() != 0):
 #(по count значения сортируются в убывающем порядке, в остальных - по возрастающему).
 output_data = output_data.sort_values(['area', 'cluster', 'cluster_name', 'count'], 
                                       ascending=[True, True, True, False])
+
+output_data.to_csv('output_data.csv')
+
+# Save the output data to a Google Spreadsheet (make sure to have Google API credentials set up)
+# or you can save it as a csv file using output_data.to_csv('output_data.csv', index=False)
+from google.oauth2 import service_account
+from googleapiclient.discovery import build
+
+credentials = service_account.Credentials.from_service_account_file('your_credentials.json')
+sheet_id = '1mHADS6i7cD5ZEHIBeSXZo9B26fIJlJ3VBDVH1ffuaM4'
+
+output_data = output_data.fillna('')
+sheets_instance = build('sheets', 'v4', credentials=credentials)
+sheets_instance.spreadsheets().values().update(
+    spreadsheetId=sheet_id, range='Sheet1', body={'values': [output_data.columns.tolist()] + output_data.values.tolist()},
+    valueInputOption='RAW'
+).execute()

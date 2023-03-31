@@ -42,8 +42,7 @@ output_data = output_data.sort_values(['area', 'cluster', 'cluster_name', 'count
                                       ascending=[True, True, True, False])
 
 
-output_data.to_csv('output_data')
-
+output_data.to_csv('output_data.csv')
 # Save the output data to a Google Spreadsheet (make sure to have Google API credentials set up)
 # or you can save it as a csv file using output_data.to_csv('output_data.csv', index=False)
 from google.oauth2 import service_account

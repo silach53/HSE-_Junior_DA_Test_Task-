@@ -21,7 +21,7 @@ def split_long_phrases(s, max_len=15):
         return s[:split_index] + '\n' + split_long_phrases(s[split_index:].strip(), max_len)
     return s
 
-output_data = pd.read_csv('output_data')
+output_data = pd.read_csv('output_data.csv')
 
 # Create scatter plots for each area
 areas = output_data['area'].unique()
