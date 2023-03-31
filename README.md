@@ -54,13 +54,13 @@ pip install pandas matplotlib
 
 ```
 
-1. Запустите скрипт **`solution1.py`** для обработки входных данных
+2. Запустите скрипт **`solution1.py`** для обработки входных данных
 
 ```bash
 python solution1.py
 ```
 
-1. Запустите скрипт **`solution2.py`** для обработки входных данных
+3. Запустите скрипт **`solution2.py`** для обработки входных данных
 
 ```bash
 python solution2.py
