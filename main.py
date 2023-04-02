@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
+from math import log10
 
 # Part 1: Data Processing
 
@@ -78,6 +79,14 @@ areas = output_data['area'].unique()
 if not os.path.exists('scatter_plots'):
     os.makedirs('scatter_plots')
 
+mas = []
+
+def size_scaler(x,max_count):
+    print(x,max_count)
+    f = 10*log10(x/pow(max_count,1/2)+10)
+    mas.append(f)
+    return f
+
 for area in areas:
     area_data = output_data[output_data['area'] == area]
     area_data['count'] = pd.to_numeric(area_data['count'], errors='coerce') # Convert 'count' column to numeric data type, non-numeric values to NaN
@@ -86,8 +95,10 @@ for area in areas:
 
     fig, ax = plt.subplots(figsize=(15, 15))
     for index, row in area_data.iterrows():
-        ax.scatter(row['x'], row['y'], s=row['count'], c=row['color'], edgecolors='k', alpha=0.7)
-        text = ax.text(row['x'], row['y'], split_long_phrases(row['keyword']), fontsize=row['count']*28/max_count, ha='center', va='center', fontname='Arial')
+        ax.scatter(row['x'], row['y'], s=1.4*row['count'], c=row['color'], edgecolors='k', alpha=0.7)
+        
+        text = ax.text(row['x'], row['y'], split_long_phrases(row['keyword']), fontsize=size_scaler(row['count'],max_count),
+                        ha='center', va='center', fontname='Arial')
         text.set_path_effects([PathEffects.withStroke(linewidth=3, foreground='w')])
 
     ax.set_title(f'Scatter plot for area {area}', fontname='Arial')
@@ -102,3 +113,5 @@ for area in areas:
 
     plt.savefig(f'scatter_plots/scatter_plot_area_{area}.png', dpi=100)
     plt.close(fig)
+
+print([round(x) for x in mas])
