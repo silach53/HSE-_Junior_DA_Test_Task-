@@ -1,68 +1,68 @@
-# Junior Data Analyst Test Task
+# Тестовое задание для младшего аналитика данных
 
-This repository contains the solution to the Junior Data Analyst Test Task. The task is divided into two parts: data processing and data visualization.
+Этот репозиторий содержит решение тестового задания для младшего аналитика данных. Задание разделено на две части: обработка данных и визуализация данных.
 
-## **Part 1: Data Processing**
+## **Часть 1: Обработка данных**
 
-The data processing task involves preparing and processing the source data to be used in the second part of the task. The requirements for the output data are specified in the problem statement. The implementation for this part can be found in **`solution1.py`**.
+Задача обработки данных заключается в подготовке и обработке исходных данных для использования во второй части задания. Требования к выходным данным указаны в постановке задачи. Реализация этой части находится в файле **`solution1.py`**.
 
-### **Data Processing Steps:**
+### **Шаги обработки данных:**
 
-1. Load the input data
-2. Keep the required columns
-3. Assign colors to phrases based on clusters
-4. Remove duplicates of keywords in the same area
-5. Rename columns if needed
-6. Sort the output data
-7. Save the output data to a CSV file or a Google Spreadsheet
+1. Загрузить входные данные
+2. Оставить требуемые столбцы
+3. Присвоить цвета фразам на основе кластеров
+4. Удалить дубликаты ключевых слов в одной области
+5. Переименовать столбцы, если это необходимо
+6. Отсортировать выходные данные
+7. Сохранить выходные данные в файл формата CSV или в таблицу Google Sheets
 
-### **Libraries used:**
+### **Используемые библиотеки:**
 
 - pandas
 
-## **Part 2: Data Visualization**
+## **Часть 2: Визуализация данных**
 
-The data visualization task involves creating scatter plots based on the processed data. Each scatter plot represents one area. The implementation for this part can be found in **`solution2.py`**.
+Задача визуализации данных заключается в создании диаграмм рассеяния на основе обработанных данных. Каждая диаграмма рассеяния представляет собой одну область. Реализация этой части находится в файле **`solution2.py`**.
 
-### **Data Visualization Steps:**
+### **Шаги визуализации данных:**
 
-1. Define a function to split long phrases
-2. Load the output data from Part 1
-3. Create scatter plots for each area
-4. Save the scatter plots as PNG files
+1. Определить функцию для разделения длинных фраз
+2. Загрузить выходные данные из Части 1
+3. Создать диаграммы рассеяния для каждой области
+4. Сохранить диаграммы рассеяния в виде файлов PNG
 
-### **Libraries used:**
+### **Используемые библиотеки:**
 
 - pandas
 - matplotlib
 
-## **Repository Structure**
+## **Структура репозитория**
 
-- **`solution1.py`**: Python script for Part 1: Data Processing
-- **`solution2.py`**: Python script for Part 2: Data Visualization
-- **`scatter_plots/`**: Folder containing scatter plot images for each area
-- **`Тестовое задание.xlsx`**: Input data in Excel format
-- **`output_data.csv`**: Processed data saved as a CSV file
+- **`solution1.py`**: Python-скрипт для Части 1: Обработка данных
+- **`solution2.py`**: Python-скрипт для Части 2: Визуализация данных
+- ````main**.py**`: Python-скрипт запускающий оби части
+- **`scatter_plots/`**: Папка, содержащая изображения диаграмм рассеяния для каждой области
+- **`Тестовое задание.xlsx`**: Входные данные в формате Excel
+- **`output_data.csv`**: Обработанные данные, сохраненные в виде файла CSV
 
-## **Usage**
+## **Использование**
 
-1. Install required dependencies:
+1. Установите необходимые зависимости:
 
-```bash
+```
 pip install pandas matplotlib
 ```
 
-1. Run the **`solution1.py`** script to process the input data and generate the output data:
+2. Запустите скрипт **`solution1.py`** для обработки входных данных
 
 ```bash
 python solution1.py
 ```
 
-1. Run the **`solution2.py`** script to create scatter plots based on the processed data:
+3. Запустите скрипт **`solution2.py`** для обработки входных данных
 
 ```bash
-shCopy code
 python solution2.py
 ```
 
-The scatter plots will be saved as PNG files in the **`scatter_plots/`** folder.
+Точечные диаграммы будут сохранены в виде PNG-файлов в папке **`scatter_plots/`**
